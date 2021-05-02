@@ -772,6 +772,10 @@ body {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
 .w-full {
   width: 100%;
 }

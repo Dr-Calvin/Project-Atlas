@@ -14,14 +14,18 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
         var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
         return arr[(val % 16)]
     }
+
     useEffect(() => {
-        axios
-            .get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.iso639_1}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`
-            ) .catch(function (error) {
+        const fetchWeather = async () => {
+            try {
+                const response = await axios(
+                    `https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.iso639_1}&appid=${api_key}`,
+                ) 
+                setWeather(response.data)
+            } catch(error) {
                 if (error.response) {
                     // Request made and server responded
-                    // console.log(error.response.data)
+                    console.log(error.response.data)
                     console.log(error.response.status)
                     console.log(error.response.headers)
                 } else if (error.request) {
@@ -31,14 +35,12 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                     // Something happened in setting up the request that triggered an Error
                     console.log("Error", error.message)
                 }
+                setWeather({})
+            }
+        }
+        fetchWeather()
+    }, [])
 
-            })
-            .then((response) => {
-                // console.log(response.data)
-                !response?setWeather({}):
-                    setWeather(response.data)
-            })
-    }, [api_key, country.capital, setWeather])
     
     return (
         <div className='container mx-auto px-4 max-w-3xl'>
@@ -88,7 +90,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                 <div className="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
                     <div className="w-full ">
                         <div className="relative">
-                            <img src={country.flag} className='mx-auto content-center' alt={`${country.name} flag`} />
+                            <img src={country.flag} className='mx-auto' alt={`${country.name} flag`} />
                         </div>
                     </div>
                 </div>
@@ -104,8 +106,6 @@ SingleCountryView.propTypes = {
     setWeather: PropTypes.func,
     weather: PropTypes.object,
     setDisplay: PropTypes.func,
-
-
 }
 
 export default SingleCountryView

@@ -9,7 +9,7 @@ const App = () => {
     const [filter, setFilter] = useState("")
     const [display, setDisplay] = useState([])
     const [weather, setWeather] = useState({})
-    const api_key = process.env.REACT_APP_WEATHERSTACK_API_KEY
+    const api_key = process.env.REACT_APP_OPENWEATHER_API_KEY
 
     const handleFilterChange = (event) => {
         setFilter(event.target.value)
