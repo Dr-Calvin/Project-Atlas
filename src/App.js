@@ -20,7 +20,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    axios.get("http://restcountries.eu/rest/v2/all").then((response) => {
+    axios.get("https://restcountries.eu/rest/v2/all").then((response) => {
       setCountries(response.data);
     });
   }, []);
