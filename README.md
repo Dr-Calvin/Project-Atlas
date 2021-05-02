@@ -7,7 +7,7 @@ This is an app that queries an API to obtain information about countries
 Access
 ------------
 
-An online preview can be found at heroku
+An online preview can be found at https://afternoon-beyond-99307.herokuapp.com/
 
 Contribute
 ----------
