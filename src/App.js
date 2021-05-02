@@ -6,9 +6,9 @@ import CountryInfo from "./components/CountryInfo"
 
 const App = () => {
     const [countries, setCountries] = useState([])
-    const [filter, setFilter] = useState([])
+    const [filter, setFilter] = useState("")
     const [display, setDisplay] = useState([])
-    const [weather, setWeather] = useState([])
+    const [weather, setWeather] = useState({})
     const api_key = process.env.REACT_APP_WEATHERSTACK_API_KEY
 
     const handleFilterChange = (event) => {

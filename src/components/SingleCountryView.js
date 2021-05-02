@@ -58,7 +58,7 @@ SingleCountryView.propTypes = {
     country: PropTypes.object,
     setFilter: PropTypes.func,
     setWeather: PropTypes.func,
-    weather: PropTypes.array,
+    weather: PropTypes.ojbect,
     setDisplay: PropTypes.func,
 
 
