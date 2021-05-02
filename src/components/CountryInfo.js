@@ -44,7 +44,7 @@ CountryInfo.propTypes = {
     api_key: PropTypes.string,
     setFilter: PropTypes.func,
     setWeather: PropTypes.func,
-    weather: PropTypes.array,
+    weather: PropTypes.object,
     setDisplay: PropTypes.func,
 
 
