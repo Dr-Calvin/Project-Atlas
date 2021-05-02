@@ -40,15 +40,15 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
     }, [api_key, country.capital, setWeather])
     
     return (
-        <div className='container mx-auto md:px-32 px-4'>
-            <div className="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16 box-content bg-white opacity-80 rounded-md">
+        <div className='container mx-auto px-4 max-w-3xl'>
+            <div className="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 box-content bg-white opacity-80 rounded-md mb-8">
                 <div className="relative z-10 col-start-1 row-start-1 px-4 pt-8 sm:pt-2 pb-3 bg-gradient-to-t  from-black sm:bg-none">
                     <h2 className="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">{country.name}</h2>
                     <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Population: {numberWithCommas(country.population)}</p>
                     <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Dialing Code: {"[+" + country.callingCodes + "]"}</p>
                     <p className="text-sm font-medium text-white sm:mb-1 sm:text-blue-600">Capital: {country.capital}</p>
                 </div>
-                <div className="col-start-1 row-start-2 px-4 sm:pb-16 text-left">
+                <div className="col-start-1 row-start-2 px-4 text-left">
                     <div className="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
                         <div className="ml-1">
                             <span className="text-black">{country.languages.length}</span>
@@ -85,8 +85,8 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                 <div className="col-start-1 row-start-3 space-y-3 px-4">
                 </div>
                 <div className="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
-                    <div className="w-full grid grid-cols-3 grid-rows-2 gap-2">
-                        <div className="relative col-span-3 row-span-2 md:col-span-2">
+                    <div className="w-full ">
+                        <div className="relative">
                             <img src={country.flag} className='mx-auto content-center' alt={`${country.name} flag`} />
                         </div>
                     </div>

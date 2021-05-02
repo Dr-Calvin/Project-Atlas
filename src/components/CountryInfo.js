@@ -16,7 +16,7 @@ const CountryInfo = ({
     return (
         <div className='absolute top-20 w-full'>
             {!num || num > 10 ? (
-                <p className='absolute w-full mt-32'>Please adjust your search, {num} countries match current criteria</p>
+                <p className='absolute w-full mt-32 px-4'>Please adjust your search, {num} countries match current criteria</p>
             ) : num > 1 ? ( <div >
                 <CountryOptions
                     countryList={countries}
