@@ -20,8 +20,8 @@ const ShowButton = ({ country, setFilter, setDisplay }) => {
 
 ShowButton.propTypes = {
     country: PropTypes.object,
-    setFilter: PropTypes.function,
-    setDisplay: PropTypes.function,
+    setFilter: PropTypes.func,
+    setDisplay: PropTypes.func,
 
 
 }

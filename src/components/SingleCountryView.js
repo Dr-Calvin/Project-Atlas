@@ -28,7 +28,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
         
                 axios
                     .get(
-                        `http://api.weatherstack.com/current?access_key=${api_key}&query=${country.capital} & units = m
+                        `https://api.weatherstack.com/current?access_key=${api_key}&query=${country.capital} & units = m
 & language = en`
                     )
                     .then((response) => {
@@ -56,10 +56,10 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
 SingleCountryView.propTypes = {
     api_key:PropTypes.string,
     country: PropTypes.object,
-    setFilter: PropTypes.function,
-    setWeather: PropTypes.string,
-    weather: PropTypes.object,
-    setDisplay: PropTypes.function,
+    setFilter: PropTypes.func,
+    setWeather: PropTypes.func,
+    weather: PropTypes.array,
+    setDisplay: PropTypes.func,
 
 
 }

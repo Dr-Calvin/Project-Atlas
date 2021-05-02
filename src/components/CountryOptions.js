@@ -28,8 +28,8 @@ const CountryOptions = ({ countryList, setFilter, setDisplay }) => {
 
 CountryOptions.propTypes = {
     countryList: PropTypes.array,
-    setFilter: PropTypes.function,
-    setDisplay: PropTypes.function,
+    setFilter: PropTypes.func,
+    setDisplay: PropTypes.func,
 }
 
 

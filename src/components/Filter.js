@@ -15,8 +15,8 @@ const Filter = ({ filter, handleFilterChange }) => {
 }
 
 Filter.propTypes = {
-    filter: PropTypes.string,
-    handleFilterChange: PropTypes.function,
+    filter: PropTypes.array,
+    handleFilterChange: PropTypes.func,
   
 }
 

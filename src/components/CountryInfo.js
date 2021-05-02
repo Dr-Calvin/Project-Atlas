@@ -42,7 +42,7 @@ const CountryInfo = ({
 CountryInfo.propTypes = {
     countries: PropTypes.array,
     api_key: PropTypes.string,
-    setFilter: PropTypes.function,
+    setFilter: PropTypes.func,
     setWeather: PropTypes.string,
     weather: PropTypes.object,
     setDisplay: PropTypes.function,
