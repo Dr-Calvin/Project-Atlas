@@ -1,0 +1,15 @@
+@tailwind base;
+
+@layer base {
+  body {
+    background-color: #b61924;
+  }
+  .top-101 {
+    top: 44rem;
+  }
+}
+/* ////////////////////////////////////////////////// */
+@tailwind components;
+
+/* ////////////////////////////////////////////////// */
+@tailwind utilities;
