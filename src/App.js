@@ -26,8 +26,7 @@ const App = () => {
     }, [])
 
     return (
-        <div className='text-center'>
-            <Filter handleFilterChange={handleFilterChange} filter={filter} />
+        <div className='text-center absolute top-10 w-full'>
             <CountryInfo
                 countries={display}
                 setFilter={setFilter}
@@ -36,6 +35,7 @@ const App = () => {
                 api_key={api_key}
                 weather={weather}
             />
+            <Filter handleFilterChange={handleFilterChange} filter={filter} />
         </div>
     )
 }

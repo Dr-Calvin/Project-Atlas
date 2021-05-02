@@ -14,7 +14,7 @@ const CountryInfo = ({
     const num = countries.length
 
     return (
-        <div className='absolute top-2 w-full'>
+        <div className='absolute top-20 w-full'>
             {!num || num > 10 ? (
                 <p className='absolute w-full mt-32'>Please adjust your search, {num} countries match current criteria</p>
             ) : num > 1 ? ( <div >

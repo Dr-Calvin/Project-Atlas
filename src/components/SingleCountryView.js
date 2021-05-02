@@ -40,7 +40,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
     }, [api_key, country.capital, setWeather])
     
     return (
-        <div className='container mx-auto px-32'>
+        <div className='container mx-auto md:px-32 px-4'>
             <div className="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16 box-content bg-white opacity-80 rounded-md">
                 <div className="relative z-10 col-start-1 row-start-1 px-4 pt-8 sm:pt-2 pb-3 bg-gradient-to-t  from-black sm:bg-none">
                     <h2 className="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">{country.name}</h2>
