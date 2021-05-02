@@ -21,7 +21,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
             ) .catch(function (error) {
                 if (error.response) {
                     // Request made and server responded
-                    console.log(error.response.data)
+                    // console.log(error.response.data)
                     console.log(error.response.status)
                     console.log(error.response.headers)
                 } else if (error.request) {
@@ -34,8 +34,9 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
 
             })
             .then((response) => {
-                console.log(response.data)
-                setWeather(response.data)
+                // console.log(response.data)
+                !response?setWeather({}):
+                    setWeather(response.data)
             })
     }, [api_key, country.capital, setWeather])
     
@@ -62,10 +63,10 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                             <li key={el.iso639_1}>{el.name}</li>
                         ))}
                     </ul>
+                    <br />
                     {weather.weather !== undefined ? (
               
                         <div>
-                            <br />
                             <h2>Current Weather in the capital:</h2>
                             <p>Temperature: {Math.round((weather.main.temp-273.15)*10)/10} Celcius</p>
                             <p>
@@ -80,7 +81,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                     Wind: {weather.wind.speed} m/s, Direction:{" "}
                             {degToCompass(weather.wind.deg)} 
                         </div>
-                    ) : <p>Weather information unavailable</p>}
+                    ) : <p>Weather information for {country.capital} is unavailable</p>}
                 </div>
                 <div className="col-start-1 row-start-3 space-y-3 px-4">
                 </div>
