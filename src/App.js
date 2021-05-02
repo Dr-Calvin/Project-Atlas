@@ -26,7 +26,7 @@ const App = () => {
     }, [])
 
     return (
-        <div className='text-center absolute top-10 w-full'>
+        <div className='text-center absolute -top-1/2 w-full'>
             <CountryInfo
                 countries={display}
                 setFilter={setFilter}

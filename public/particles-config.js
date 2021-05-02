@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -107,4 +108,4 @@ particlesJS("particles-js", {
         }
     },
     "retina_detect": true
-});
+})
