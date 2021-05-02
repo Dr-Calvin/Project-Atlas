@@ -14,10 +14,10 @@ const CountryInfo = ({
     const num = countries.length
 
     return (
-        <div >
+        <div className='absolute top-2 w-full'>
             {!num || num > 10 ? (
-                <p>Please adjust your search, {num} countries match current criteria</p>
-            ) : num > 1 ? ( <div className='absolute top-4 w-full'>
+                <p className='absolute w-full mt-32'>Please adjust your search, {num} countries match current criteria</p>
+            ) : num > 1 ? ( <div >
                 <CountryOptions
                     countryList={countries}
                     setFilter={setFilter}
@@ -25,7 +25,7 @@ const CountryInfo = ({
                 /> </div>
             ) : (
                 countries.map((country) => (
-                    <div key={country.alpha2Code} className='absolute top-4 w-full'>
+                    <div key={country.alpha2Code} >
                         <SingleCountryView
                             country={country}
                             setWeather={setWeather}

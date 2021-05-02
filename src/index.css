@@ -7,6 +7,15 @@
   .top-101 {
     top: 44rem;
   }
+  #particles-js {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #b61924;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
 }
 /* ////////////////////////////////////////////////// */
 @tailwind components;
