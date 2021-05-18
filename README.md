@@ -1,9 +1,9 @@
 Country Data
 ========
 
-This is an app that queries an API to obtain information about countries 
-and then queries another API to obtain the current weather information 
-in a searched capital city.
+This is an app that queries an API to obtain information about all the countries of the world 
+and then queries another API to obtain the current weather information for a selected country's 
+capital city.
 
 
 Access
