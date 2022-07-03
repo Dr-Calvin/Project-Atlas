@@ -10,8 +10,8 @@ const CountryOptions = ({ countryList, setFilter, setDisplay }) => {
 
                 {countryList.map((c) => {
                     return (
-                        <li key={c.alpha2Code}>
-                            {c.name} {"[+" + c.callingCodes + "]"}{" "}
+                        <li key={c.name.common}>
+                            {c.name.common}
                             <ShowButton
                                 setDisplay={setDisplay}
                                 setFilter={setFilter}

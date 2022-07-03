@@ -25,7 +25,7 @@ const CountryInfo = ({
                 /> </div>
             ) : (
                 countries.map((country) => (
-                    <div key={country.alpha2Code} >
+                    <div key={country.name.common} >
                         <SingleCountryView
                             country={country}
                             setWeather={setWeather}

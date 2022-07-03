@@ -3,7 +3,7 @@ import axios from "axios"
 import PropTypes from "prop-types"
 
 
-const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
+const SingleCountryView = ({ country, weather, setWeather, api_key }) => {
     
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -19,7 +19,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
         const fetchWeather = async () => {
             try {
                 const response = await axios(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.iso639_1}&appid=${api_key}`,
+                    `https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name.common}&appid=${api_key}`,
                 ) 
                 setWeather(response.data)
             } catch(error) {
@@ -46,10 +46,9 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
         <div className='container mx-auto px-4 max-w-3xl'>
             <div className="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 box-content bg-white opacity-80 rounded-md mb-8">
                 <div className="relative z-10 col-start-1 row-start-1 px-4 pt-8 sm:pt-2 pb-3 bg-gradient-to-t  from-black sm:bg-none">
-                    <h2 className="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">{country.name}</h2>
+                    <h2 className="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">{country.name.common}</h2>
                     <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Population: {numberWithCommas(country.population)}</p>
-                    <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Dialing Code: {"[+" + country.callingCodes + "]"}</p>
-                    <p className="text-sm font-medium text-white sm:mb-1 sm:text-blue-600">Capital: {country.capital}</p>
+                    <p className="text-sm font-medium text-white sm:mb-1 sm:text-blue-600">Capital: {country.capital.join(", ")}</p>
                 </div>
                 <div className="col-start-1 row-start-2 px-4 text-left">
                     <div className="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
@@ -58,11 +57,11 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                             
                         </div>
                         <div className="text-base font-normal mx-2">·</div>
-                        <div>Official Language{country.languages.length>1?"s":""}:</div>
+                        <div>Official Language{Object.keys(country.languages).length>1?"s":""}:</div>
                     </div>
                     <ul className=''>
-                        {country.languages.map((el) => (
-                            <li key={el.iso639_1}>{el.name}</li>
+                        {Object.keys(country.languages).map((k) => (
+                            <li key={k}>{country.languages[k]}</li>
                         ))}
                     </ul>
                     <br />
@@ -90,7 +89,7 @@ const SingleCountryView = ({ country, setWeather, api_key, weather }) => {
                 <div className="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
                     <div className="w-full ">
                         <div className="relative">
-                            <img src={country.flag} className='mx-auto' alt={`${country.name} flag`} />
+                            <img src={country.flags.png} className='mx-auto' alt={`${country.name} flag`} />
                         </div>
                     </div>
                 </div>

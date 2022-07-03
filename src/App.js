@@ -14,13 +14,13 @@ const App = () => {
     const handleFilterChange = (event) => {
         setFilter(event.target.value)
         let disp = countries.filter((p) =>
-            p.name.toLowerCase().includes(event.target.value.toLowerCase())
+            p.name.common.toLowerCase().includes(event.target.value.toLowerCase())
         )
         setDisplay(disp)
     }
 
     useEffect(() => {
-        axios.get("https://restcountries.eu/rest/v2/all").then((response) => {
+        axios.get("https://restcountries.com/v3.1/all").then((response) => {
             setCountries(response.data)
         })
     }, [])

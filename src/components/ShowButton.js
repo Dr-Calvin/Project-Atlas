@@ -5,9 +5,9 @@ const ShowButton = ({ country, setFilter, setDisplay }) => {
     return (
         <button className='rounded px-3 py-2 m-1 shadow-lg bg-blue-800 border-blue-900 text-white'
             type="button"
-            value={country.name}
+            value={country.name.common}
             onClick={() => {
-                setFilter(country.name)
+                setFilter(country.name.common)
                 setDisplay([country])
                 return null
             }}
